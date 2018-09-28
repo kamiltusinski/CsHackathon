@@ -1,16 +1,10 @@
 {
   "extends": ["tslint-config-airbnb"],
   "rules": {
-    "import-name": [
-      true,
-      {
-        "mobxReactDevTools": "DevTools"
-      }
-    ],
     "max-line-length": [true, 300],
     "ter-indent": [
       true,
-      2,
+      4,
       {
         "SwitchCase": 1
       }
