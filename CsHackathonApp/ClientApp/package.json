@@ -1,0 +1,38 @@
+{
+  "name": "cs-hackathon-app",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "axios": "^0.18.0",
+    "axios-progress-bar": "^1.0.1",
+    "lodash": "^4.17.10",
+    "mobx": "^5.0.2",
+    "mobx-react": "^5.1.2",
+    "mobx-react-devtools": "^6.0.3",
+    "mobx-react-router": "^4.0.1",
+    "mobx-utils": "^5.0.0",
+    "moment": "^2.19.3",
+    "query-string": "^6.0.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts-ts": "2.17.0"
+  },
+  "scripts": {
+    "start": "react-scripts-ts start",
+    "build": "react-scripts-ts build",
+    "test": "react-scripts-ts test --env=jsdom",
+    "eject": "react-scripts-ts eject"
+  },
+  "devDependencies": {
+    "@types/jest": "^23.3.2",
+    "@types/lodash": "^4.14.109",
+    "@types/node": "^10.11.2",
+    "@types/query-string": "^6.1.0",
+    "@types/react": "^16.4.14",
+    "@types/react-dom": "^16.0.8",
+    "@types/react-router-dom": "^4.2.5",
+    "typescript": "^3.1.1"
+  }
+}
