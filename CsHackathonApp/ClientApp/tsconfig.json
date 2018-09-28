@@ -10,13 +10,17 @@
     "jsx": "react",
     "moduleResolution": "node",
     "rootDir": "src",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "noImplicitReturns": true,
     "noImplicitThis": true,
     "noImplicitAny": true,
-    "strictNullChecks": true,
+    //"strictNullChecks": true,
     "suppressImplicitAnyIndexErrors": true,
-    "noUnusedLocals": true
+    "noUnusedLocals": true,
+    "pretty": true,
+    "removeComments": true
   },
   "exclude": [
     "node_modules",
