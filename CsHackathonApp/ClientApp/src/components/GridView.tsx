@@ -11,7 +11,7 @@ import 'ag-grid-enterprise';
 
 import { GridViewStore } from './GridViewStore';
 
-import { Button } from 'semantic-ui-react';
+import { Button, List } from 'semantic-ui-react';
 
 @inject('gridViewStore')
 @observer
@@ -47,7 +47,12 @@ class GridView extends React.Component<{ gridViewStore?: GridViewStore }, any> {
     render() {
         return (
             <>
-                <Button onClick={() => this.props.gridViewStore.sendMsg('Kamil', '1')}>Click</Button>
+                <Button onClick={() => this.props.gridViewStore.sendMsg('Kamil', 'Hi SignalR!')}>Click</Button>
+                <List>
+                    {this.props.gridViewStore.msg && this.props.gridViewStore.msg.map(item => (
+                        <List.Item key={item}>{item}</List.Item>
+                    ))}
+                </List>
                 <div
                     className="take-available-space ag-theme-balham"
                     style={{ height: '100%' }}
