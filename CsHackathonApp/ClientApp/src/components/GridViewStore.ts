@@ -2,13 +2,21 @@ import { observable, action } from 'mobx';
 
 import { HubConnection, HubConnectionBuilder, LogLevel } from '@aspnet/signalr';
 
+export function getUrl(url: string): string {
+    if (window.location.href.indexOf('localhost') > -1) {
+        return `https://localhost:5001${url}`;
+    }
+
+    return `https://cshackathonapp.azurewebsites.net${url}`;
+}
+
 export class GridViewStore {
     private connection: HubConnection;
     @observable msg: string[] = [];
 
     constructor() {
         this.connection = new HubConnectionBuilder()
-            .withUrl('https://localhost:5001/basicHub')
+            .withUrl(getUrl('/basicHub'))
             .configureLogging(LogLevel.Information)
             .build();
 
