@@ -11,12 +11,14 @@ import './App.css';
 
 import Shell from './Shell';
 import Routes from './Routes';
+import GridViewStore from '../components/GridViewStore';
 
 const browserHistory = createBrowserHistory();
 const routingStore = new RouterStore();
 
 const stores = {
-    routing: routingStore
+    routing: routingStore,
+    gridViewStore: GridViewStore
 };
 
 const history = syncHistoryWithStore(browserHistory, routingStore);

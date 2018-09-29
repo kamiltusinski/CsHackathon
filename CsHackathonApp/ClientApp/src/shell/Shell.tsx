@@ -17,7 +17,7 @@ class Shell extends React.Component<{ routing?: RouterStore }> {
             <>
                 <AppNav />
 
-                <Container style={{ height: '100%', padding: '71px 15px 15px 15px' }} fluid>
+                <Container style={{ height: '100%', paddingTop: '71px' }} fluid>
                     {this.props.children}
                 </Container>
 

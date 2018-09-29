@@ -1,3 +1,4 @@
+using CsHackathonApp.Hubs;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
@@ -21,11 +22,15 @@ namespace CsHackathonApp
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
+            services.AddSignalR();
+
             // In production, the React files will be served from this directory
             services.AddSpaStaticFiles(configuration =>
             {
                 configuration.RootPath = "ClientApp/build";
             });
+
+            services.AddCors();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,6 +49,17 @@ namespace CsHackathonApp
             app.UseStaticFiles();
             app.UseSpaStaticFiles();
 
+            app.UseCors(builder => builder
+                .AllowAnyOrigin()
+                .AllowAnyMethod()
+                .AllowAnyHeader()
+                .AllowCredentials());
+
+            app.UseSignalR(routes =>
+            {
+                routes.MapHub<BasicHub>("/basicHub");
+            });
+
             app.UseMvcWithDefaultRoute();
 
             app.UseSpa(spa =>
@@ -53,7 +69,7 @@ namespace CsHackathonApp
                 if (env.IsDevelopment())
                 {
                     //spa.UseReactDevelopmentServer(npmScript: "start");
-                    spa.UseProxyToSpaDevelopmentServer("http://localhost:3100");
+                    //spa.UseProxyToSpaDevelopmentServer("http://localhost:3100");
                 }
             });
         }
