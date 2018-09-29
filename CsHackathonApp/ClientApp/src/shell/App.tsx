@@ -5,9 +5,6 @@ import { Provider } from 'mobx-react';
 import { RouterStore, syncHistoryWithStore } from 'mobx-react-router';
 import { Router } from 'react-router';
 
-// tslint:disable-next-line:import-name
-import DevTools from 'mobx-react-devtools';
-
 import { loadProgressBar } from 'axios-progress-bar';
 
 import './App.css';
@@ -30,15 +27,13 @@ class App extends React.Component {
     public render() {
         return (
             <Provider {...stores}>
-                <div>
+                <>
                     <Shell>
                         <Router history={history}>
                             <Routes />
                         </Router>
                     </Shell>
-
-                    {true && <DevTools />}
-                </div>
+                </>
             </Provider>
         );
     }
