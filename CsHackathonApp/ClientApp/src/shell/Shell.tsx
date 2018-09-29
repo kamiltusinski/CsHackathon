@@ -9,6 +9,8 @@ import { Container } from 'semantic-ui-react';
 // tslint:disable-next-line:import-name
 import DevTools from 'mobx-react-devtools';
 
+import './Shell.css';
+
 @inject('routing')
 @observer
 class Shell extends React.Component<{ routing?: RouterStore }> {
@@ -16,8 +18,7 @@ class Shell extends React.Component<{ routing?: RouterStore }> {
         return (
             <>
                 <AppNav />
-
-                <Container style={{ height: '100%', paddingTop: '71px' }} fluid>
+                <Container fluid className="view-container">
                     {this.props.children}
                 </Container>
 

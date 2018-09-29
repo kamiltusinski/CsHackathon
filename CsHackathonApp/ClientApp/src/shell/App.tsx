@@ -7,8 +7,6 @@ import { Router } from 'react-router';
 
 import { loadProgressBar } from 'axios-progress-bar';
 
-import './App.css';
-
 import Shell from './Shell';
 import Routes from './Routes';
 import GridViewStore from '../components/GridViewStore';

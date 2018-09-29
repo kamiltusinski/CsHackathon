@@ -11,7 +11,7 @@ import 'ag-grid-enterprise';
 
 import { GridViewStore } from './GridViewStore';
 
-import { Button, Container } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
 @inject('gridViewStore')
 @observer
@@ -46,14 +46,11 @@ class GridView extends React.Component<{ gridViewStore?: GridViewStore }, any> {
 
     render() {
         return (
-            <Container style={{ height: '100%' }} fluid>
+            <>
                 <Button onClick={() => this.props.gridViewStore.sendMsg('Kamil', '1')}>Click</Button>
                 <div
-                    className="ag-theme-balham"
-                    style={{
-                        height: '100%',
-                        width: '100%'
-                    }}
+                    className="take-available-space ag-theme-balham"
+                    style={{ height: '100%' }}
                 >
                     <AgGridReact
                         enableSorting
@@ -64,7 +61,7 @@ class GridView extends React.Component<{ gridViewStore?: GridViewStore }, any> {
                         rowData={this.state.rowData}
                     />
                 </div>
-            </Container>
+            </>
         );
     }
 }
